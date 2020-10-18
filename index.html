@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Included so that the é in Pokémon displays correctly in the browser -->
+        <meta charset="utf-8"/>
+        <!-- Review, title appears on the tab of a web browser -->
+        <title>Pokémon TCG Card Checker</title>
+        <script async defer src="pokemon_tcg.js"></script>
+        <link rel="stylesheet" type="text/css" href="pokemon_style.css">
+    </head>
+
+    <body>
+        
+        <h1>Pokémon TCG</h1>
+
+        <h2>Check whether or not your card is standard legal for tournament play</h2>
+
+        <p>To see which set your Pokémon card is from, check the bottom of the card for a symbol. This is typically 
+            located at the bottom left or bottom right of the card. After finding the symbol, match it with one of 
+            the symbols found <a href="https://cardmavin.com/pokemon/pokemon-card-2set-symbols">here</a> and type the
+             set name below. Next to the symbol you'll find a number like "20/214" then enter the first number below. 
+             In this case you would enter 20. This means that the card you have is number 20 of 214 from the set.</p>
+
+        <label for="card-input">Enter the card number next to the symbol:</label><input id="card-input" name="card-input">
+        
+        <br>
+        <label for="set-input">Enter the set the card is from:</label><input id="set-input" name="set-input">
+
+        <br>
+        <button id="check-button">Check if tournament legal</button>
+
+        <!-- Use JavaScript to return a message back the user -->
+        <p id="answer"></p>
+
+    </body>
+
+</html>
