@@ -49,9 +49,9 @@ checkButton.addEventListener('click', function() {
         let expandedLegalCheck = setResponse[0].expandedLegal // Grabs expandedLegal key and gets the value of true or false
         console.log(expandedLegalCheck)
 
-        if (tournamentLegal && expandedLegalCheck === "true") {
+        if (tournamentLegal == true) {
             resultDisplay.innerHTML = 'This card is standard legal and expanded legal for tournament play!'
-        } else if (expandedLegalCheck === "true") {
+        } else if (expandedLegalCheck == true && tournamentLegal == false) {
             resultDisplay.innerHTML = 'This card is only expanded legal for tournament play.'
         } else {
             resultDisplay.innerHTML = 'This card is NOT standard legal for tournament play.'
