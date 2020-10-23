@@ -8,3 +8,12 @@
 h1 {
     color: ghostwhite;
 }
+.col-md-5 {
+    text-align: center;
+}
+#results {
+    text-align: center;
+}
+p {
+    text-align: center;
+}

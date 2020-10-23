@@ -26,13 +26,18 @@
                 
                 <h3>Check whether or not your Pokémon card is standard legal for tournament play</h2>
 
-                <p>Enter the name of the Pokémon card. If you are unable to find your card, try and type it exactly as it's 
-                written on the card for example "Blazekin-EX" To see which set your Pokémon card is from, check the bottom
-                of the card for a symbol. This is typically located at the bottom left or bottom right of the card. After 
-                finding the symbol, match it with one of the symbols found <i><a href="https://cardmavin.com/pokemon/pokemon-card-set-symbols">here</a></i>
-                and type the set name. If you see promo black star, you do not need to enter the set. Just skip that and simply
-                 enter the promo number next to the star symbol like "BW45."
-                </p>
+                <ul>
+                    <li>Enter the name of the Pokémon card. If you are unable to find your EX or GX type cards, type in the name of 
+                    the Pokémon along with a dash inbetween the type for example "Blaziken-EX." </li>
+                
+                    <li>To see which set your Pokémon card is from, check the bottom of the card for a symbol. This is typically located at the bottom left or bottom 
+                    right of the card. If it is an older card the set symbol might be located towards the middle of the card, underneath the card art. After finding the
+                     symbol, match it with one of the symbols found <i><a href="https://cardmavin.com/pokemon/pokemon-card-set-symbols">here</a></i> and type the set name. 
+                     If you see promo black star, you do <b>not</b> need to enter the set. Just skip that and simply enter the promo number next to the star symbol like "BW45."</li>
+
+                    <li>Lastly enter the first number next to the set symbol. For example if you see "022/192", you'll just enter 22 for the number. Again if you have a
+                    promo card just enter the promo number next to the black star like "DP24."</li>
+                </ul>
                 
             </div>
         </div>
@@ -62,11 +67,13 @@
 
         </div> <!-- End of row -->
 
-        <div>
+        <div id="results">
             <!-- Use JavaScript to return a message back the user -->
             <p id="answer">This is where the answer will come back</p>
-            <img s>
+            <img id="card-image">
         </div>
+
+        <p>Data is from Pokémon TCG API by Andrew Backes</p>
     </body>
 
 </html>
