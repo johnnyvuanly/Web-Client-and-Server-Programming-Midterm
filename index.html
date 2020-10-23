@@ -26,10 +26,12 @@
                 
                 <h3>Check whether or not your Pokémon card is standard legal for tournament play</h2>
 
-                <p>Enter the name of the Pokémon card. To see which set your Pokémon card is from, check the bottom of the card for a symbol. This is typically 
-                    located at the bottom left or bottom right of the card. After finding the symbol, match it with one of 
-                    the symbols found <i><a href="https://cardmavin.com/pokemon/pokemon-card-set-symbols">here</a></i> and type the
-                    set name below. 
+                <p>Enter the name of the Pokémon card. If you are unable to find your card, try and type it exactly as it's 
+                written on the card for example "Blazekin-EX" To see which set your Pokémon card is from, check the bottom
+                of the card for a symbol. This is typically located at the bottom left or bottom right of the card. After 
+                finding the symbol, match it with one of the symbols found <i><a href="https://cardmavin.com/pokemon/pokemon-card-set-symbols">here</a></i>
+                and type the set name. If you see promo black star, you do not need to enter the set. Just skip that and simply
+                 enter the promo number next to the star symbol like "BW45."
                 </p>
                 
             </div>
@@ -48,6 +50,10 @@
             <input id="set" name="set" class="form-control">
 
             <br>
+            <label for="number">Enter the first number next to the symbol:</label>
+            <input id="number" name="number" class="form-control">
+
+            <br>
             <button id="check" type="button" class="btn btn-outline-dark">Check if tournament legal</button>
 
         </form>
@@ -56,9 +62,11 @@
 
         </div> <!-- End of row -->
 
-        <!-- Use JavaScript to return a message back the user -->
-        <p id="answer"></p>
-    
+        <div>
+            <!-- Use JavaScript to return a message back the user -->
+            <p id="answer">This is where the answer will come back</p>
+            <img s>
+        </div>
     </body>
 
 </html>
