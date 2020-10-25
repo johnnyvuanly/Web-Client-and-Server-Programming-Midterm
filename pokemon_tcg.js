@@ -38,6 +38,7 @@ checkButton.addEventListener('click', function() {
     .then( cardData => {
         if (cardData.cards.length == 0) {
             resultDisplay.innerHTML = `Could not find a card with the name of ${userCards} and a number of ${userNumber}`
+            img.src = ''
         }
         console.log(cardData) // Shows the object of what the user inputed or array(s) of the cards returned
         let cardResponse = cardData.cards
@@ -82,4 +83,3 @@ checkButton.addEventListener('click', function() {
 // https://api.pokemontcg.io/v1/sets?name=dragon
 // https://api.pokemontcg.io/v1/cards?name=charizard&set=dragon
 // https://api.pokemontcg.io/v1/sets/sm75
-
