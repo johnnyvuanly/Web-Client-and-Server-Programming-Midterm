@@ -4,6 +4,8 @@
 .jumbotron {
     text-align: center;
     background-color: firebrick;
+    border-style: solid;
+    border-width: thick;
 }
 .jumbotron h1 {
     font-family: 'Londrina Solid', cursive;

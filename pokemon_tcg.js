@@ -14,8 +14,20 @@ checkButton.addEventListener('click', function() {
     let sets = setInput.value
     let userNumber = numberInput.value
 
-    // TODO Validation
+    let errors = []
+    
+    if (userCards.length == 0) {
+        errors.push('Enter a card name')
+    }
+    if (userNumber.length == 0) {
+        errors.push('Enter the number next to the cards symbol')
+    }
+    if (errors.length > 0) {
+        alert(errors.join('\n'))
+        return
+    }
 
+    
     url = `https://api.pokemontcg.io/v1/cards?name=${userCards}&set=${sets}&number=${userNumber}`
 
     fetch(url)
@@ -24,9 +36,11 @@ checkButton.addEventListener('click', function() {
         return res.json()
     })
     .then( cardData => {
+        if (cardData.cards.length == 0) {
+            resultDisplay.innerHTML = `Could not find a card with the name of ${userCards} and a number of ${userNumber}`
+        }
         console.log(cardData) // Shows the object of what the user inputed or array(s) of the cards returned
-        
-        let cardResponse = cardData.cards 
+        let cardResponse = cardData.cards
         console.log(cardResponse)
         let cardImageURL = cardResponse[0].imageUrl // Shows the array with an object of the card data, grabs imageUrl key and shows its value
         console.log(cardImageURL)
