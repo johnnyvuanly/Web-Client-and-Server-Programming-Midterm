@@ -5,7 +5,8 @@ let setInput = document.querySelector('#set')
 let numberInput = document.querySelector('#number')
 let checkButton = document.querySelector('#check')
 let resultDisplay = document.querySelector('#answer')
-let img = document.querySelector('#card-image')
+// let img = document.querySelector('#card-image')
+let imgContainer = document.querySelector('#image-container')
 
 // TODO display if the card the user searched for is legal or not
 
@@ -19,9 +20,9 @@ checkButton.addEventListener('click', function() {
     if (userCards.length == 0) {
         errors.push('Enter a card name')
     }
-    if (userNumber.length == 0) {
-        errors.push('Enter the number next to the cards symbol')
-    }
+    // if (userNumber.length == 0) {
+    //     errors.push('Enter the number next to the cards symbol')
+    // }
     if (errors.length > 0) {
         alert(errors.join('\n'))
         return
@@ -43,13 +44,20 @@ checkButton.addEventListener('click', function() {
         console.log(cardData) // Shows the object of what the user inputed or array(s) of the cards returned
         let cardResponse = cardData.cards
         console.log(cardResponse)
-        let cardImageURL = cardResponse[0].imageUrl // Shows the array with an object of the card data, grabs imageUrl key and shows its value
-        console.log(cardImageURL)
+         // Shows the array with an object of the card data, grabs imageUrl key and shows its value
+        // console.log(cardImageURL)
         let setName = cardResponse[0].set // grabs the set key and shows its value
         console.log(setName)
 
         // This is how you set the src for an image in HTML using JavaScript
-        img.src = cardImageURL
+        // img.src = cardImageURL
+
+        for (let x = 0; x < cardData.cards.length;  x++) {   // for-each loop 
+            let cardImgEl = document.createElement('img')
+            let cardImageURL = cardResponse[x].imageUrl
+            cardImgEl.src= cardImageURL   // replace with data from response 
+            imgContainer.appendChild(cardImgEl)
+        }
 
         return fetch(`https://api.pokemontcg.io/v1/sets/?name=${setName}`)
 
